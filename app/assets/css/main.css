@@ -1,0 +1,242 @@
+@import '../../../node_modules/@long2x/cresh-ui/dist/cresh-ui.css';
+@import '@long2x/cresh-ui/default-theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --bg: #f7f8fa;
+  --panel: rgba(255, 255, 255, 0.82);
+  --line: rgba(15, 23, 42, 0.12);
+  --text: #0b0d12;
+  --muted: #586174;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #0b0d12;
+  --panel: rgba(16, 20, 28, 0.82);
+  --line: rgba(226, 232, 240, 0.12);
+  --text: #f7f8fa;
+  --muted: #aeb5c0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(125, 211, 252, 0.10), transparent 30rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(14, 165, 233, 0.25);
+}
+
+.surface {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+}
+
+.eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.18em] text-sky-700 dark:text-sky-300;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+  color: #0b0d12 !important;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif !important;
+}
+
+.dark main h1,
+.dark main h2,
+.dark main h3,
+.dark main h4 {
+  color: #ffffff !important;
+}
+
+.cresh-action .c-button,
+.cresh-action.c-button,
+.cresh-action button {
+  min-height: 2.5rem;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.cresh-action,
+.cresh-action * {
+  font-family: inherit !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.cresh-action-primary .c-button,
+.cresh-action-primary.c-button,
+.cresh-action-primary button {
+  border-color: #0b0d12 !important;
+  background: #0b0d12 !important;
+  color: #ffffff !important;
+}
+
+.dark .cresh-action-primary .c-button,
+.dark .cresh-action-primary.c-button,
+.dark .cresh-action-primary button {
+  border-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #0b0d12 !important;
+}
+
+.cresh-action-secondary .c-button,
+.cresh-action-secondary.c-button,
+.cresh-action-secondary button {
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  background: transparent !important;
+  color: #0b0d12 !important;
+}
+
+.dark .cresh-action-secondary .c-button,
+.dark .cresh-action-secondary.c-button,
+.dark .cresh-action-secondary button {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+.cresh-action-primary .c-button *,
+.cresh-action-primary.c-button *,
+.cresh-action-primary button *,
+.cresh-action-secondary .c-button *,
+.cresh-action-secondary.c-button *,
+.cresh-action-secondary button * {
+  color: inherit !important;
+}
+
+.cresh-tag .c-tag,
+.cresh-tag.c-tag {
+  border-radius: 0.375rem;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  background: rgba(255, 255, 255, 0.70);
+  color: #2d3442;
+}
+
+.dark .cresh-tag .c-tag,
+.dark .cresh-tag.c-tag {
+  border-color: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f7f8fa;
+}
+
+.cresh-theme-switch {
+  display: inline-flex;
+  min-width: 2.75rem;
+}
+
+.experience-stepper-shell {
+  overflow: hidden;
+}
+
+.experience-stepper.c-vertical-stepper {
+  gap: 0.125rem;
+  background: transparent !important;
+}
+
+.experience-stepper.c-vertical-stepper .step-item {
+  min-height: 4rem;
+  color: #586174 !important;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif !important;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  opacity: 1 !important;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.experience-stepper.c-vertical-stepper .step-item:hover,
+.experience-stepper.c-vertical-stepper .step-item.selected {
+  color: #0b0d12 !important;
+  background: rgba(14, 165, 233, 0.08);
+  border-radius: 0.375rem;
+}
+
+.experience-stepper.c-vertical-stepper .step-item .step-dot-wrapper {
+  width: 2.25rem;
+  min-height: 4rem;
+}
+
+.experience-stepper.c-vertical-stepper .step-item .step-dot-wrapper .step-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  background: rgba(15, 23, 42, 0.28) !important;
+}
+
+.experience-stepper.c-vertical-stepper .step-item .step-dot-wrapper .step-line {
+  background: rgba(15, 23, 42, 0.14) !important;
+}
+
+.experience-stepper.c-vertical-stepper .step-item.selected .step-dot-wrapper .step-dot,
+.experience-stepper.c-vertical-stepper.selectable .step-item:hover .step-dot-wrapper .step-dot {
+  background: #0ea5e9 !important;
+}
+
+.experience-detail {
+  min-height: 27rem;
+}
+
+.dark .experience-stepper.c-vertical-stepper .step-item {
+  color: #aeb5c0 !important;
+}
+
+.dark .experience-stepper.c-vertical-stepper .step-item:hover,
+.dark .experience-stepper.c-vertical-stepper .step-item.selected {
+  color: #ffffff !important;
+  background: rgba(125, 211, 252, 0.08);
+}
+
+.dark .experience-stepper.c-vertical-stepper .step-item .step-dot-wrapper .step-dot {
+  background: rgba(226, 232, 240, 0.30) !important;
+}
+
+.dark .experience-stepper.c-vertical-stepper .step-item .step-dot-wrapper .step-line {
+  background: rgba(226, 232, 240, 0.14) !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal 620ms ease both;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
