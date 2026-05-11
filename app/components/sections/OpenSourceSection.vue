@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { openSourceProjects } from '~/data/portfolio'
+const { content } = useLanguage()
 </script>
 
 <template>
   <section id="open-source" class="border-y border-ink-900/10 py-20 dark:border-white/10">
     <div class="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
       <SectionHeader
-        eyebrow="Open source"
-        title="Open-source projects with real product utility."
-        description="Selected public projects that demonstrate reusable component architecture, production Nuxt patterns, documentation discipline and deployment readiness."
+        :eyebrow="content.sections.openSource.eyebrow"
+        :title="content.sections.openSource.title"
+        :description="content.sections.openSource.description"
       />
 
       <div class="grid gap-4 sm:grid-cols-2">
         <NuxtLink
-          v-for="project in openSourceProjects"
+          v-for="project in content.openSourceProjects"
           :key="project.name"
           :to="project.href"
           class="surface focus-ring group rounded-lg p-5 transition hover:-translate-y-1 hover:shadow-soft"

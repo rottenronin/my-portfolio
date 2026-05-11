@@ -13,6 +13,7 @@ export interface Project {
   links: LinkItem[]
   accent: string
   metrics: string[]
+  previewUrl?: string
 }
 
 export interface Experience {
@@ -46,9 +47,9 @@ export const profile = {
   title: 'Senior Fullstack Developer',
   specialization: 'Fullstack product engineering, TypeScript, NestJS, .NET, Cloud',
   intro: 'Building and modernizing product platforms across frontend, backend, cloud infrastructure and automation. Over a decade of experience shipping business applications, payment systems, inventory tools and enterprise workflows.',
-  email: 'mailto:contact@example.com',
-  github: 'https://github.com/long2x',
-  linkedin: 'https://www.linkedin.com/in/long2x/',
+  email: 'mailto:longlongxu@proton.me',
+  github: 'https://github.com/rottenronin',
+  linkedin: 'https://www.linkedin.com/in/longlong-xu/',
   siteUrl: 'https://portfolio.example.com',
   location: 'Northern France'
 }
@@ -56,6 +57,7 @@ export const profile = {
 export const projects: Project[] = [
   {
     slug: 'cresh-ui',
+    previewUrl: 'https://cresh-ui.com/',
     title: 'Cresh UI',
     summary: 'Open-source Vue 3 UI component library focused on reusable and maintainable interfaces.',
     description:
@@ -63,7 +65,7 @@ export const projects: Project[] = [
     highlights: ['Vue 3', 'TypeScript', 'Design System', 'Storybook', 'npm packaging'],
     technologies: ['Vue 3', 'TypeScript', 'Vite', 'Storybook', 'Design Tokens'],
     links: [
-      { label: 'GitHub', href: 'https://github.com/long2x/cresh-ui' },
+      { label: 'GitHub', href: 'https://github.com/rottenronin/cresh-ui' },
       { label: 'npm', href: 'https://www.npmjs.com/package/@long2x/cresh-ui' }
     ],
     accent: '#0ea5e9',
@@ -71,6 +73,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'france-histories',
+    previewUrl: 'https://france-histories.com/',
     title: 'France Histories',
     summary:
       'Interactive platform exploring French history through visual storytelling, historical illustrations and chronological navigation.',
@@ -84,16 +87,17 @@ export const projects: Project[] = [
   },
   {
     slug: 'le-cercle-vert',
+    previewUrl: 'https://rdv.lecerclevert.org/',
     title: 'Le Cercle Vert',
     summary:
       'Appointment scheduling platform developed for an association managing home collection appointments.',
     description:
-      'A production scheduling interface with responsive appointment flows, operational states and maintainable front-end patterns for everyday association workflows.',
+      'A Nuxt 4 scheduling platform using Nuxt UI, AWS Lambda, DynamoDB and CloudFront to manage responsive appointment flows for association operations.',
     highlights: ['scheduling system', 'responsive UI', 'production-ready platform'],
-    technologies: ['Angular', 'TypeScript', 'NestJS', 'PostgreSQL', 'REST APIs'],
+    technologies: ['Nuxt 4', 'Nuxt UI', 'AWS Lambda', 'AWS DynamoDB', 'CloudFront'],
     links: [{ label: 'Case study', href: '/projects/le-cercle-vert' }],
     accent: '#16a34a',
-    metrics: ['Appointment workflows', 'Operational dashboard', 'Mobile-first booking']
+    metrics: ['Serverless scheduling', 'DynamoDB data model', 'CloudFront delivery']
   }
 ]
 
@@ -268,7 +272,7 @@ export const openSourceProjects: OpenSourceProject[] = [
     description:
       'Open-source Vue 3 UI library focused on reusable components, typed APIs, design-system consistency and npm package distribution.',
     stack: ['Vue 3', 'TypeScript', 'Vite', 'Design System', 'npm'],
-    href: 'https://github.com/long2x/cresh-ui'
+    href: 'https://github.com/rottenronin/cresh-ui'
   },
   {
     name: 'my-portfolio',
@@ -276,7 +280,7 @@ export const openSourceProjects: OpenSourceProject[] = [
     description:
       'This portfolio website, built as a production-grade Nuxt application with SSR, SEO metadata, Cloudflare Pages deployment and Cresh UI components.',
     stack: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Tailwind CSS', 'Cloudflare Pages'],
-    href: 'https://github.com/long2x/my-portfolio'
+    href: 'https://github.com/rottenronin/my-portfolio'
   }
 ]
 

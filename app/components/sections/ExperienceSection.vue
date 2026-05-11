@@ -1,25 +1,31 @@
 <script setup lang="ts">
-import { experiences } from '~/data/portfolio'
-
+const { content } = useLanguage()
 const selectedExperienceIndex = ref(0)
 
 const experienceSteps = computed(() =>
-  experiences.map((experience) => ({
+  content.value.experiences.map((experience) => ({
     id: experience.company,
     text: `${experience.company} · ${experience.duration}`
   }))
 )
 
-const activeExperience = computed(() => experiences[selectedExperienceIndex.value])
+const activeExperience = computed(() => content.value.experiences[selectedExperienceIndex.value])
+
+watch(
+  () => content.value.experiences,
+  () => {
+    selectedExperienceIndex.value = 0
+  }
+)
 </script>
 
 <template>
   <section id="experience" class="py-20">
     <div class="section-shell">
       <SectionHeader
-        eyebrow="Experience"
-        title="Impact-oriented engineering across product surfaces."
-        description="A practical focus on architecture, scalability, UI systems and production applications."
+        :eyebrow="content.sections.experience.eyebrow"
+        :title="content.sections.experience.title"
+        :description="content.sections.experience.description"
       />
       <div class="mt-10 grid gap-8 lg:grid-cols-[0.38fr_1fr] lg:items-start">
         <div class="experience-stepper-shell surface rounded-lg p-3 sm:p-4">

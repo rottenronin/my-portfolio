@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { education } from '~/data/portfolio'
+const { content } = useLanguage()
 </script>
 
 <template>
   <section id="education" class="border-t border-ink-900/10 py-20 dark:border-white/10">
     <div class="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
       <SectionHeader
-        eyebrow="Education"
-        title="Academic foundation in software engineering."
-        description="A technical education path combining project-based engineering, international study and early computer science foundations."
+        :eyebrow="content.sections.education.eyebrow"
+        :title="content.sections.education.title"
+        :description="content.sections.education.description"
       />
 
       <div class="surface rounded-lg p-5 sm:p-6">
         <ol class="divide-y divide-ink-900/10 dark:divide-white/10">
-          <li v-for="item in education" :key="`${item.school}-${item.duration}`" class="grid gap-4 py-6 first:pt-0 last:pb-0 sm:grid-cols-[3.25rem_1fr]">
+          <li v-for="item in content.education" :key="`${item.school}-${item.duration}`" class="grid gap-4 py-6 first:pt-0 last:pb-0 sm:grid-cols-[3.25rem_1fr]">
             <div class="flex h-12 w-12 items-center justify-center rounded-md border border-ink-900/10 bg-white text-xs font-semibold text-sky-700 dark:border-white/10 dark:bg-white/5 dark:text-sky-300">
               {{ item.school.slice(0, 2).toUpperCase() }}
             </div>

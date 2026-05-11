@@ -1,41 +1,47 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2026-05-08',
+  compatibilityDate: "2026-05-08",
   devtools: { enabled: true },
   ssr: true,
-  modules: ['@nuxtjs/tailwindcss', '@vueuse/nuxt'],
-  css: ['~/assets/css/main.css'],
-  components: [
-    { path: '~/components', pathPrefix: false }
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@vueuse/nuxt"],
+  css: ["~/assets/css/main.css"],
+  components: [{ path: "~/components", pathPrefix: false }],
   app: {
     head: {
-      htmlAttrs: { lang: 'en' },
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
+      htmlAttrs: { lang: "en" },
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'canonical', href: 'https://portfolio.example.com/' }
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.png" },
+        { rel: "canonical", href: "https://portfolio.example.com/" },
       ],
       meta: [
-        { name: 'theme-color', content: '#0b0d12' },
-        { name: 'robots', content: 'index, follow' }
-      ]
-    }
+        { name: "theme-color", content: "#0b0d12" },
+        { name: "robots", content: "index, follow" },
+      ],
+    },
   },
   nitro: {
-    preset: 'cloudflare-pages',
+    preset: "cloudflare-pages",
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/projects/cresh-ui', '/projects/france-histories', '/projects/le-cercle-vert', '/sitemap.xml']
-    }
+      routes: [
+        "/",
+        "/projects/cresh-ui",
+        "/projects/france-histories",
+        "/projects/le-cercle-vert",
+        "/sitemap.xml",
+      ],
+    },
   },
   routeRules: {
-    '/': { prerender: true },
-    '/projects/**': { prerender: true },
-    '/assets/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
+    "/": { prerender: true },
+    "/projects/**": { prerender: true },
+    "/assets/**": {
+      headers: { "cache-control": "public, max-age=31536000, immutable" },
+    },
   },
   typescript: {
     strict: true,
-    typeCheck: false
-  }
-})
+    typeCheck: false,
+  },
+});
