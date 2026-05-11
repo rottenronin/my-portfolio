@@ -33,6 +33,14 @@ export interface Education {
   details?: string[]
 }
 
+export interface OpenSourceProject {
+  name: string
+  category: string
+  description: string
+  stack: string[]
+  href: string
+}
+
 export const profile = {
   fullName: 'Longlong Xu',
   title: 'Senior Fullstack Developer',
@@ -250,6 +258,25 @@ export const education: Education[] = [
     duration: 'Sep 2007 - Jun 2009',
     location: 'Paris, France',
     details: ['Secondary education completed before specializing in software engineering.']
+  }
+]
+
+export const openSourceProjects: OpenSourceProject[] = [
+  {
+    name: 'Cresh UI',
+    category: 'Vue component library',
+    description:
+      'Open-source Vue 3 UI library focused on reusable components, typed APIs, design-system consistency and npm package distribution.',
+    stack: ['Vue 3', 'TypeScript', 'Vite', 'Design System', 'npm'],
+    href: 'https://github.com/long2x/cresh-ui'
+  },
+  {
+    name: 'my-portfolio',
+    category: 'Nuxt portfolio application',
+    description:
+      'This portfolio website, built as a production-grade Nuxt application with SSR, SEO metadata, Cloudflare Pages deployment and Cresh UI components.',
+    stack: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Tailwind CSS', 'Cloudflare Pages'],
+    href: 'https://github.com/long2x/my-portfolio'
   }
 ]
 
