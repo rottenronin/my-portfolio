@@ -3,14 +3,20 @@ import { profile, projects } from '../../app/data/portfolio'
 export default defineEventHandler((event) => {
   setHeader(event, 'content-type', 'application/xml; charset=utf-8')
 
+  const lastmod = new Date().toISOString().split('T')[0]
+
   const routes = [
-    '',
-    ...projects.map((project) => `/projects/${project.slug}`)
+    { path: '', priority: '1.0', changefreq: 'weekly' },
+    ...projects.map((project) => ({
+      path: `/projects/${project.slug}`,
+      priority: '0.8',
+      changefreq: 'monthly'
+    }))
   ]
 
   const urls = routes
-    .map((route) => {
-      return `<url><loc>${profile.siteUrl}${route}</loc><changefreq>monthly</changefreq><priority>${route ? '0.8' : '1.0'}</priority></url>`
+    .map(({ path, priority, changefreq }) => {
+      return `<url><loc>${profile.siteUrl}${path}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`
     })
     .join('')
 

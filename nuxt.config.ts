@@ -10,10 +10,7 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: "en" },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      link: [
-        { rel: "icon", type: "image/svg+xml", href: "/favicon.png" },
-        { rel: "canonical", href: "https://portfolio.example.com/" },
-      ],
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.png" }],
       meta: [
         { name: "theme-color", content: "#0b0d12" },
         { name: "robots", content: "index, follow" },
