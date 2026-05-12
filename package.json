@@ -10,7 +10,7 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@long2x/cresh-ui": "^6.1.4",
+    "@long2x/cresh-ui": "^6.1.5",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/nuxt": "^13.0.0",
     "nuxt": "^4.0.0",
